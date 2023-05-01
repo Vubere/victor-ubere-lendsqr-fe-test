@@ -32,7 +32,7 @@ export default function Login() {
     if (user) {
       navigate(routes.dashboard)
     }
-  }, [])
+  }, [user, navigate])
 
   const togglePwdType = () => {
     if (pwdRef.current && togglePwdTypeRef.current) {

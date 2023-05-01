@@ -28,6 +28,7 @@
     height: 404px;
     padding: 0;
     margin-top: 73px;
+  
     .loginImg {
       width: 45.94%;
       height: 348px;
@@ -35,8 +36,8 @@
       padding-top: 66px;
       padding-bottom: 0;
       img {
-        min-width: 100%;
-        min-width: 400px;
+        width: 100%;
+        min-width: 360px;
         height: 100%;
         object-fit: contain;
       }
@@ -152,6 +153,64 @@
           font-size: 14px;
           text-transform: uppercase;
         }
+      }
+    }
+  }
+  @media screen and (max-width: 1023px) {
+    h1{
+      margin-bottom: 20px;
+    }
+    main{
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+      overflow-y: auto;
+      padding: 0;
+      margin-top: 10px;
+      .loginImg{
+        width: 100%;
+        padding-top: 20px;
+      }
+      .formContainer{
+        width: 60%;
+        max-width: 600px;
+        min-width: 400px;
+        padding: 0;
+      }
+    }
+  }
+  @media screen and (max-width: 450px){
+    main{
+      .formContainer{
+        width: 80%;
+        min-width: 300px;
+        height: auto;
+        padding-bottom: 120px;
+        form{
+          .inputs{
+            label{
+              height: 40px;
+              input{
+                height: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+  @media screen and (max-width: 380px) {
+    padding-left: 10px;
+    main{
+      .loginImg{
+        img{
+          min-width: 240px;
+        }
+      }
+      .formContainer{
+        width: 90%;
+        min-width: 240px;
       }
     }
   }
