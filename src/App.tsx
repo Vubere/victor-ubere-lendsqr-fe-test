@@ -20,13 +20,11 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path={routes.home} >
-            <Route path={routes.home} element={<Home />} />
-            <Route path={routes.login} element={<Login />} />
-          </Route>
+          <Route path={routes.home} element={<Home />} />
+          <Route path={routes.login} element={<Login />} />
           <Route path={routes.dashboard} element={<DashboardLayout />} >
-            <Route path={routes.users} element={<Users/>}/>
-            <Route path={routes.userDetails} element={<UserDetails/>}/>
+            <Route path={routes.users} element={<Users />} />
+            <Route path={routes.userDetails} element={<UserDetails />} />
           </Route>
         </Routes>
       </BrowserRouter >
