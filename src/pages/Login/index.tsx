@@ -53,7 +53,7 @@ export default function Login() {
       [name]: value
     })
   }
-  let setErrorsTimeout: any;
+  let setErrorsTimeout: NodeJS.Timeout;
   const validation = () => {
     let isValid = true
     const emailPattern = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
@@ -110,11 +110,11 @@ export default function Login() {
           </div>
           <form onSubmit={onSubmit}>
             <div className='inputs'>
-              {errors.email.length > 0 && <p className='error'>{errors.email}</p>}
+              {errors.email.length > 0 && <p className='error' test-id='error'>{errors.email}</p>}
               <label>
                 <input type="text" name='email' value={form.email} onChange={onInputChange} placeholder='Email' />
               </label>
-              {errors.password.length > 0 && <p className='error'>{errors.password}</p>}
+              {errors.password.length > 0 && <p className='error' test-id='error'>{errors.password}</p>}
               <label className='pwd'>
                 <input type="password" name='password' value={form.password} onChange={onInputChange} placeholder='Password' ref={pwdRef} />
                 <span onClick={togglePwdType} ref={togglePwdTypeRef}>
