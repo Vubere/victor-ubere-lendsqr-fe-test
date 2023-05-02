@@ -39,12 +39,12 @@ import logout from './assets/sideBarImages/logout.svg'
 
 export const switchOrganizations = {
   icon: switchOrganizationIcon,
-  route: routes.usersLink,
+  route: routes.notImplemented,
   text: 'Switch Organizations'
 }
 export const Dashboard = {
   icon: home,
-  route: routes.usersLink,
+  route: routes.notImplemented,
   text: 'Dashboard'
 }
 
@@ -56,37 +56,37 @@ export const customers = [
   },
   {
     icon: guarantors,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Guarantors",
   },
   {
     icon: loans,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Loans",
   },
   {
     icon: decisionModels,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Decision Models",
   },
   {
     icon: savings,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Savings",
   },
   {
     icon: loanRequest,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Loan Requests",
   },
   {
     icon: whiteList,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Whitelist",
   },
   {
     icon: karma,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Karma",
   },
 ];
@@ -94,47 +94,47 @@ export const customers = [
 export const businesses = [
   {
     icon: organization,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Organization",
   },
   {
     icon: loanProducts,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Loan Products",
   },
   {
     icon: savingsProduct,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Savings Product",
   },
   {
     icon: feesAndCharges,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Fees and Charges",
   },
   {
     icon: transaction,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Transactions",
   },
   {
     icon: services,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Services",
   },
   {
     icon: serviceAccount,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Service Account",
   },
   {
     icon: settlements,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Settlements",
   },
   {
     icon: reports,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Reports",
   },
 ]
@@ -142,22 +142,22 @@ export const businesses = [
 export const settings = [
   {
     icon: preferences,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Preferences",
   },
   {
     icon: feesAndPricing,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Fess and Pricing",
   },
   {
     icon: auditLogs,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Audit Logs",
   },
   {
     icon: systemsMessages,
-    route: routes.usersLink,
+    route: routes.notImplemented,
     text: "Systems Messages",
   },
 ]

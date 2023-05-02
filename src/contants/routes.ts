@@ -10,6 +10,7 @@ const routes = {
     userDetailsLink: '/dashboard/users/:id',
     users: 'users',
     userDetails: 'users/:id',
+    notImplemented: '/dashboard/not_implemented'
 }
 
 

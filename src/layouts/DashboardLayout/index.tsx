@@ -3,7 +3,7 @@
 import { useState } from 'react'
 
 /* react router imports */
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, NavLink } from 'react-router-dom'
 
 /* assets */
 import logo from '../../assets/logo_and_text.svg'
@@ -12,11 +12,13 @@ import notifications from './assets/headerImages/notification.svg'
 import dropdown from './assets/headerImages/arrow_down.svg'
 import profile from './assets/headerImages/profile.png'
 
+import arrowDown from './assets/sideBarImages/switch_org_arrow.svg'
+
 /* app routes */
-import routes from '../../contants/routes'
 
 /* sidebar navigation imports */
 import { businesses, customers, settings, switchOrganizations, Dashboard, logOut } from './sidebarNavigation'
+
 
 
 export default function DashboardLayout() {
@@ -63,61 +65,61 @@ const Header = () => {
 
 const SideBar = () => {
 
-
   return (
     <aside>
       <nav>
         <ul className='switchOrganizations'>
           <li>
-            <Link to={switchOrganizations.route}>
+            <NavLink to={switchOrganizations.route} className={({isActive, isPending})=>isPending?'pending':isActive?'active':''}>
               <img src={switchOrganizations.icon} />
-              <span>{switchOrganizations.text}</span>
-            </Link>
+              <span>{switchOrganizations.text} </span>
+            </NavLink>
+            <img src={arrowDown} />
           </li>
         </ul>
-        <ul className='dashboard'>
-          <li>
-            <Link to={Dashboard.route}>
+        <ul className='dashboard section'>
+          <li className='listItem'>
+            <NavLink to={Dashboard.route} className={({ isActive, isPending }) => isPending ? 'pending' : isActive ? 'active' : ''}>
               <img src={Dashboard.icon} />
               <span>{Dashboard.text}</span>
-            </Link>
+            </NavLink>
           </li>
         </ul>
-        <ul className='customers'>
+        <ul className='customers section'>
           <h4>CUSTOMERS</h4>
           {customers.map(({ route, icon, text }) => (
-            <li key={route}>
-              <Link to={route}>
+            <li key={route} className='listItem'>
+              <NavLink to={route} className={({ isActive, isPending }) => isPending ? 'pending' : isActive ? 'active' : ''}>
                 <img src={icon} />
                 <span>{text}</span>
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
-        <ul className='businesses'>
+        <ul className='businesses section'>
           <h4>BUSINESSES</h4>
           {businesses.map(({ route, icon, text }) => (
-            <li key={route}>
-              <Link to={route}>
+            <li key={route} className='listItem'>
+              <NavLink to={route} className={({ isActive, isPending }) => isPending ? 'pending' : isActive ? 'active' : ''}>
                 <img src={icon} />
                 <span>{text}</span>
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
-        <ul className='settings'>
+        <ul className='settings section'>
           <h4>SETTINGS</h4>
           {settings.map(({ route, icon, text }) => (
-            <li key={route}>
-              <Link to={route}>
+            <li key={route} className='listItem'>
+              <NavLink to={route} className={({ isActive, isPending }) => isPending ? 'pending' : isActive ? 'active' : ''}>
                 <img src={icon} />
                 <span>{text}</span>
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
-        <ul className='logout'>
-          <li>
+        <ul className='logout section'>
+          <li className='listItem'>
             <button>
               <img src={logOut.icon} />
               <span>{logOut.text}</span>
