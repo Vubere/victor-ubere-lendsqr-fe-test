@@ -11,7 +11,7 @@ import routes from '../../contants/routes';
 
 
 export default function Home() {
-  const user = localStorage.getItem('user')
+  const user = localStorage.getItem('lend_sqr_user')
   const navigate = useNavigate()
   useEffect(() => {
     if (user) {

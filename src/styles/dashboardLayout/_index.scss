@@ -536,6 +536,9 @@
       top: 78px;
       height: calc(100vh - 78px);
     }
+    main{ 
+      top: 80px;
+    }
   }
   @media screen and (max-width: 390px) {
     header.mobile {

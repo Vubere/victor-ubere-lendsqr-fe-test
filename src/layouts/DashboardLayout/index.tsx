@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, RefObject } from 'react'
 
 /* react router imports */
-import { Outlet, NavLink } from 'react-router-dom'
+import { Outlet, NavLink, useNavigate } from 'react-router-dom'
 
 /* assets */
 import logo from '../../assets/logo_and_text.svg'
@@ -15,6 +15,7 @@ import profile from './assets/headerImages/profile.png'
 import arrowDown from './assets/sideBarImages/switch_org_arrow.svg'
 
 /* app routes */
+import routes from '../../contants/routes'
 
 /* sidebar navigation imports */
 import { businesses, customers, settings, switchOrganizations, Dashboard, logOut } from './sidebarNavigation'
@@ -25,6 +26,14 @@ export default function DashboardLayout() {
   const [mobile, setMobile] = useState(window.innerWidth < 768)
   const asideRef = useRef<HTMLDivElement>(null)
   const { open, toggleOpen } = useCloseOnOutsideClick(asideRef)
+
+  const user = localStorage.getItem('lend_sqr_user')
+  const navigate = useNavigate()
+  useEffect(() => {
+    if (!user){
+      navigate(routes.login)
+    }
+  }, [user, navigate])
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -130,7 +139,13 @@ const MobileHeader = ({toggleSidebar}:{toggleSidebar:()=>void}) => {
 }
 
 const SideBar = ({ divRef }: { divRef: RefObject<HTMLDivElement> }) => {
-  
+  const navigate = useNavigate()
+
+  const logout = () => {
+    localStorage.removeItem('lend_sqr_user')
+    navigate(routes.login)
+  }
+
   return (
     <div ref={divRef}>
       <aside>
@@ -187,7 +202,7 @@ const SideBar = ({ divRef }: { divRef: RefObject<HTMLDivElement> }) => {
           </ul>
           <ul className='logout section'>
             <li className='listItem'>
-              <button>
+              <button onClick={logout}>
                 <img src={logOut.icon} />
                 <span>{logOut.text}</span>
               </button>
