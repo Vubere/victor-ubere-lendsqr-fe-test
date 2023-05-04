@@ -15,7 +15,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 2.08%;
+    padding: 0 2.08%;
     box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
     img {
       width: 144.8px;
@@ -24,6 +24,7 @@
     label {
       margin-left: 11.68%;
       width: 27.78%;
+      min-width: 230px;
       height: 40px;
       display: flex;
       align-items: center;
@@ -60,10 +61,12 @@
       }
       button {
         width: 14%;
+        min-width: 35px;
         height: 100%;
         background-color: v.$thinnerColor;
         border: none;
         outline: none;
+        border-radius: 0 5px 5px 0;
         img {
           width: 14px;
           height: 14px;
@@ -82,11 +85,12 @@
           line-height: 18.75px;
           font-weight: 400;
           font-size: 16px;
+          color: v.$thinColor;
         }
         li.notifications {
           display: flex;
           align-items: center;
-          margin-left: 50.16px;
+          margin-left: 23.33%;
           img {
             width: 19.67px;
             height: 22.74px;
@@ -112,7 +116,7 @@
             img {
               width: 7.34px;
               height: 4.15px;
-              margin-left: 10px;
+              margin-left: 10.33px;
             }
           }
         }
@@ -133,6 +137,7 @@
     min-width: 260px;
     nav {
       width: 100%;
+
       .switchOrganizations {
         width: 100%;
         height: 40px;
@@ -140,7 +145,7 @@
           width: 100%;
           display: flex;
           align-items: center;
-          height: 100%;
+          height: 40px;
           gap: 10px;
           a {
             &:active,
@@ -152,8 +157,7 @@
               background-color: #{v.$thinnerColor}10;
               border-left: 3px solid v.$thinnerColor;
             }
-            width: 100%;
-            padding-left: 12.54%;
+            padding-left: 10.54%;
             height: 40px;
             display: flex;
             gap: 10px;
@@ -195,6 +199,7 @@
           width: 100%;
           text-transform: uppercase;
           font-weight: 500;
+          color: v.$thinColor;
           font-family: "Work Sans", sans-serif;
           font-size: 12px;
           line-height: 14px;
@@ -222,7 +227,7 @@
             height: 40px;
             display: flex;
             gap: 10px;
-            
+
             align-items: center;
           }
         }
@@ -251,6 +256,370 @@
         color: v.$thinColor;
         margin-left: 10px;
         font-family: "Work Sans", sans-serif;
+      }
+    }
+  }
+  main {
+    position: absolute;
+    top: 98px;
+    left: clamp(260px,19.65%, 280px);
+    width: calc( 100% - clamp(260px,19.65%, 280px));
+    height: calc(100vh - 98px);
+    overflow-y: auto;
+  }
+  @media screen and (max-width: 1204px) {
+    header {
+      nav {
+        margin-left: 20%;
+      }
+    }
+  }
+  @media screen and (max-width: 1103px) {
+    header {
+      nav {
+        margin-left: 15%;
+      }
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    header {
+      label {
+        margin-left: 8%;
+      }
+    }
+  }
+  @media screen and (max-width: 900px) {
+    header {
+      label {
+        margin-left: 5%;
+      }
+      nav {
+        margin-left: 9%;
+        ul {
+          li.notifications {
+            margin-left: 15%;
+          }
+          li.userDetails {
+            margin-left: 16%;
+          }
+        }
+      }
+    }
+    aside {
+      min-width: 230px;
+      nav {
+        li {
+          a {
+            padding-left: 5%;
+            height: 35px;
+            font-size: 14px;
+          }
+        }
+        .section {
+          &.dashboard {
+            max-height: 35px;
+            display: flex;
+            align-items: center;
+            li {
+              max-height: 35px;
+            }
+          }
+        }
+      }
+    }
+    main{
+      left: 230px;
+      width: calc(100% - 230px);
+    }
+  }
+  @media screen and (max-width: 767px) {
+    header.mobile {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      .hamburger {
+        height: 30px;
+        min-width: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        height: 50px;
+        margin-right: 10px;
+        .line {
+          width: 100%;
+          height: 4px;
+          background-color: v.$thinColor;
+          border: 1px solid v.$thinColor;
+        }
+      }
+      h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 130px;
+        }
+      }
+      label {
+        width: 0;
+        min-width: none;
+        margin-left: 37%;
+      }
+      button.pop {
+        width: 30px;
+        height: 30px;
+        background-color: v.$thinnerColor;
+        border: none;
+        border-radius: 5px;
+        margin-left: 36%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          height: 13px;
+          width: 13px;
+        }
+      }
+      nav {
+        gap: 0;
+        min-width: none;
+        margin: 0;
+        margin-left: 7%;
+        ul {
+          display: flex;
+          align-items: center;
+          li {
+            &.notifications,
+            &.docs,
+            &.userDetails {
+              margin: 0;
+              padding: 0;
+              img {
+                margin: 0;
+              }
+            }
+            &.docs {
+              text-decoration: underline;
+              color: v.$thickColor;
+            }
+            &.notifications {
+              margin-left: 19%;
+            }
+            &.userDetails {
+              display: flex;
+              align-items: center;
+              margin-left: 16%;
+              img.profile {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+              }
+              img.dropdown {
+                width: 7px;
+                height: 6px;
+              }
+            }
+          }
+        }
+      }
+    }
+    main{
+      left: 0;  
+      width: 100%;    
+    }
+  }
+  @media screen and (max-width: 685px) {
+    header.mobile {
+      label {
+        margin-left: 27%;
+      }
+      button.pop {
+        border-radius: 5px;
+        width: 25px;
+        background-color: v.$thinnerColor;
+        border: none;
+        margin-left: 30%;
+        display: block;
+      }
+      nav.invisible {
+        display: none;
+      }
+    }
+  }
+  @media screen and (max-width: 620px) {
+    header.mobile {
+      label {
+        margin-left: 25%;
+        @media screen and (max-width: 570px) {
+          margin-left: 17%;
+        }
+      }
+      button.pop {
+        margin-left: 25%;
+        @media screen and (max-width: 580px) {
+          margin-left: 20%;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 520px) {
+    header.mobile {
+      height: 80px;
+      .hamburger {
+        width: 30px;
+        min-width: 30px;
+      }
+      h1 {
+        img {
+          width: 115px;
+        }
+      }
+      label {
+        height: 35px;
+        width: 100px;
+        padding-left: 10px;
+        min-width: 200px;
+        input {
+          width: 75%;
+        }
+        @media screen and (max-width: 445px) {
+          margin-left: 40px;
+        }
+        @media screen and (max-width: 410px) {
+          margin-left: 30px;
+          min-width: 150px;
+          input {
+            text-overflow: ellipsis;
+            width: 65%;
+          }
+        }
+      }
+      button.pop {
+        margin-left: 25%;
+        @media screen and (max-width: 480px) {
+          margin-left: 20%;
+        }
+        @media screen and (max-width: 445px) {
+          margin-left: 15%;
+        }
+        @media screen and (max-width: 420px) {
+          margin-left: 10%;
+        }
+      }
+      nav {
+        ul {
+          li {
+            &.docs {
+              font-size: 12px;
+            }
+            &.notifications {
+              margin-left: 16px;
+              img {
+                height: 17px;
+              }
+            }
+            &.userDetails {
+              img {
+                &.profile {
+                  width: 35px;
+                  height: 35px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    aside {
+      top: 78px;
+      height: calc(100vh - 78px);
+    }
+  }
+  @media screen and (max-width: 390px) {
+    header.mobile {
+      padding: 5px;
+      .hamburger {
+        height: 25px;
+        gap: 3px;
+        .line {
+          height: 4px;
+        }
+      }
+      h1 {
+        img {
+          width: 100px;
+        }
+      }
+      @media screen and (max-width: 370px) {
+        button.pop {
+          margin-left: 30px;
+          min-width: 25px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 360px) {
+    header.mobile {
+      h1 {
+        width: 80px;
+        img {
+          width: 80px;
+        }
+      }
+      label {
+        margin-left: 14px;
+        @media screen and (max-width: 310px) {
+          button {
+            min-width: 30px;
+            width: 30px;
+            img {
+              width: 12px;
+            }
+          }
+        }
+        @media screen and (max-width: 295px) {
+          width: 130px;
+          min-width: 130px;
+          margin-left: 20px;
+          button {
+            min-width: 25px;
+            width: 25px;
+          }
+        }
+      }
+      button.pop {
+        margin-left: 20px;
+        @media screen and (max-width: 320px) and (min-width: 303px) {
+          margin-left: 25px;
+        }
+        @media screen and (max-width: 290px) {
+          margin-left: 10px;
+        }
+      }
+      nav {
+        ul {
+          li.userDetails {
+            margin-left: 10px;
+          }
+        }
+        @media screen and (max-width: 320px) {
+          ul {
+            li {
+              &.notifications {
+                margin-left: 5px;
+              }
+              &.userDetails {
+                margin-left: 5px;
+                gap: 0;
+                img.dropdown {
+                  margin-left: 2px;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
