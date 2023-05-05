@@ -30,7 +30,7 @@ export default function Login() {
   useEffect(() => {
     document.title = 'Log In'
     if (user) {
-      navigate(routes.dashboard)
+      navigate(routes.usersLink)
     }
   }, [user, navigate])
 
