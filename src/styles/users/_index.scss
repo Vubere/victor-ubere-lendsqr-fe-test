@@ -1,0 +1,238 @@
+@use "../_variables" as v;
+
+.users {
+  background-color: v.$milk;
+  width: full;
+  height: full;
+  padding: 60px 5.86%;
+  h2 {
+    font-size: clamp(22px, 2.5vw, 24px);
+    font-weight: 500;
+    text-transform: capitalize;
+    color: v.$thickColor;
+    margin-bottom: 40px;
+    line-height: 28.15px;
+  }
+  .usersCountContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 40px;
+    
+    .card {
+      width: 23.14%;
+      height: 160px;
+      min-width: 220px;
+      background-color: v.$white;
+      border: 1px solid rgba(33, 63, 125, 0.06);
+      border-radius: 4px;
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      padding: 20px 30px;
+      .icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 14px;
+        img {
+          object-fit: cover;
+        }
+      }
+      .info {
+        font-family: "Work Sans", sans-serif;
+        h4 {
+          font-size: 14px;
+          font-weight: 500;
+          text-transform: uppercase;
+          line-height: 16.42px;
+          color: v.$thickColor;
+          margin-bottom: 12px;
+        }
+        h3 {
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 28.15px;
+          color: v.$thickColor;
+        }
+      }
+    }
+    @media screen and (max-width: 510px) {
+      justify-content: center;
+      .card{
+        width: 90%;
+      }
+    }
+  }
+  .usersTable {
+    width: 100%;
+    .table {
+      width: 100%;
+      overflow-x: auto;
+      background-color: v.$white;
+      padding: 30px 0;
+      display: flex;
+      justify-content: center;
+      table {
+        width: 94.21%;
+        display: block;
+        column-gap: 35px;
+        border-collapse: collapse;
+        border-radius: 4px;
+        th span,
+        td span {
+          padding: 20px 0;
+          padding-right: 20px;
+        }
+        thead {
+          tr {
+            th {
+              span {
+                width: 100%;
+                text-align: start;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 12px;
+                line-height: 14.08px;
+                text-transform: uppercase;
+                font-weight: 600;
+                color: v.$thinColor;
+                text-align: start;
+                &.org {
+                  min-width: 150px;
+                }
+                &.username {
+                  min-width: 100px;
+                }
+                &.email {
+                  min-width: 180px;
+                }
+                &.phone {
+                  min-width: 170px;
+                }
+                &.date {
+                  min-width: 170px;
+                }
+                &.status {
+                  min-width: 100px;
+                }
+                img {
+                  height: 16px;
+                  width: 16px;
+                }
+              }
+            }
+          }
+        }
+        tbody {
+          width: 100%;
+          tr {
+            border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+            &:last-child {
+              border-bottom: none;
+            }
+            td {
+              span {
+                text-overflow: ellipsis;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 16.42px;
+                color: v.$thinColor;
+                text-align: left;
+                text-overflow: ellipsis;
+              }
+              &.action {
+                min-width: 30px;
+                .dottedMenu {
+                  width: 100%;
+                  display: flex;
+                  justify-content: center;
+                  .menu {
+                    width: 20px;
+                    height: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    img {
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .pagination {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .left {
+      p {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: v.$thinColor;
+        font-family: "Work Sans", sans-serif;
+        font-size: 14px;
+        line-height: 16px;
+        span {
+          background-color: #{v.$thickColor}13;
+          padding: 7px 12px;
+          display: inline-block;
+          width: 80px;
+          height: 30px;
+          select {
+            color: v.$thickColor;
+            background-color: transparent;
+            border-radius: 4px;
+            border: none;
+            width: 100%;
+            outline: none;
+          }
+        }
+      }
+    }
+    .right{
+      width: 262px;
+      @media screen and (max-width: 790px) {
+        width: 240px;
+      }
+      .buttons{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .button{
+          width: 24px;
+          height: 24px;
+          background-color: transparent;
+          border: none;
+          font-size: 16px;
+          color: #{v.$thinColor}99;
+          outline: none;
+          cursor: pointer;
+          border-radius: 4px;
+          &:last-child, &:first-child{
+            background-color: #{v.$thickColor}13;
+          }
+          &.active, &:last-child, &:first-child{
+            color: v.$thickColor;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}

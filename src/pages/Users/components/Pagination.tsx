@@ -1,12 +1,13 @@
 
+/* images */
+import lt from '../assets/lt.svg'
+import gt from '../assets/gt.svg'
 
 
 
 const Pagination = ({ usersLength, pagination, setPagination }: paginationProps) => {
 
   const {
-    start,
-    end,
     amountOfPages,
     currentPage,
     usersPerPage
@@ -33,28 +34,28 @@ const Pagination = ({ usersLength, pagination, setPagination }: paginationProps)
   const Pagination = () => (
     <>
       {
-        paginationArray(amountOfPages, currentPage).map((page) => <button className={`paginationButton ${page === currentPage ? 'active' : ''}`} key={page} onClick={() => goToPage(page)}>{page}</button>)
+        paginationArray(amountOfPages, currentPage).map((page) => <button className={`button ${page === currentPage ? 'active' : ''}`} key={page} onClick={() => goToPage(page)}>{page}</button>)
       }
     </>
   )
 
   return (
     <div className='pagination'>
-      <div className='paginationLeft'>
+      <div className='left'>
         <p>Showing
-          {usersLength > usersPerPage ? <select name="pagination" id="pagination" value={usersPerPage} onChange={(e) => setPagination({ ...pagination, usersPerPage: parseInt(e.target.value) })}>
+          {usersLength > usersPerPage ? <span> <select name="pagination" id="pagination" value={usersPerPage} onChange={(e) => setPagination({ ...pagination, usersPerPage: parseInt(e.target.value) })}>
             <option value="10">10</option>
             <option value="15">15</option>
             <option value="15">20</option>
             <option value="25">25</option>
-          </select> : usersLength}
+          </select> </span> : usersLength}
           out of {usersLength}</p>
       </div>
-      <div className='paginationRight'>
-        <div className='paginationButtons'>
-          <button className='paginationButton' onClick={previous}>&lt;</button>
-          {<Pagination/>}
-          <button className='paginationButton' onClick={next}>&gt;</button>
+      <div className='right'>
+        <div className='buttons'>
+          <button className='button' onClick={previous}><img src={lt}/></button>
+          {<Pagination />}
+          <button className='button' onClick={next}><img src={gt}/></button>
         </div>
       </div>
     </div>

@@ -7,6 +7,10 @@ import { user } from "../../../types"
 /* pagination */
 import Pagination from "./Pagination"
 
+/* images */
+import filter from '../assets/filter.svg'
+import dottedMenu from '../assets/dottedMenu.svg'
+
 
 const UsersTable = ({ users }: { users: user[] }) => {
 
@@ -23,22 +27,48 @@ const UsersTable = ({ users }: { users: user[] }) => {
 
   return (
     <div className='usersTable'>
-      <table>
-        <thead>
-          <tr>
-            <th>ORGANIZATION</th>
-            <th>USERNAME</th>
-            <th>EMAIL</th>
-            <th>PHONE NUMBER</th>
-            <th>DATE JOINED</th>
-            <th>STATUS</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentUsers.map((user) => <TableRow user={user} key={user.id} />)}
-        </tbody>
-      </table>
+      <div className="table">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <span className='org'>
+                  ORGANIZATION <img src={filter} />
+                </span>
+              </th>
+              <th>
+                <span className='username'>
+                  USERNAME <img src={filter} />
+                </span>
+              </th>
+              <th>
+                <span className='email'>
+                  EMAIL <img src={filter} />
+                </span>
+              </th>
+              <th>
+                <span className='phone'>
+                  PHONE NUMBER <img src={filter} />
+                </span>
+              </th>
+              <th>
+                <span className='date'>
+                  DATE JOINED <img src={filter} />
+                </span>
+              </th>
+              <th>
+                <span className='status'>
+                  STATUS <img src={filter} />
+                </span>
+              </th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {currentUsers.map((user) => <TableRow user={user} key={user.id} />)}
+          </tbody>
+        </table>
+      </div>
       <Pagination usersLength={users.length} pagination={{
         start,
         end,
@@ -46,7 +76,7 @@ const UsersTable = ({ users }: { users: user[] }) => {
         currentPage: pagination.currentPage,
         usersPerPage: pagination.usersPerPage
       }} setPagination={setPagination} />
-    </div>
+    </div >
   )
 }
 const TableRow = ({ user }: { user: user }) => {
@@ -61,18 +91,40 @@ const TableRow = ({ user }: { user: user }) => {
 
   return (
     <tr>
-      <td>{user.orgName}</td>
-      <td>{user.userName}</td>
-      <td>{user.email}</td>
-      <td>{user.profile.phoneNumber}</td>
-      <td>{createdAt}</td>
-      <td>{user.education.employmentStatus}</td>
-      <td>
-        <div className="dottedMenu">
-          <div className="dot"></div>
-          <div className="dot"></div>
-          <div className="dot"></div>
-        </div>
+      <td className='orgName'>
+        <span>
+          {user.orgName.length > 15 ? user.orgName.slice(0, 15) + '...' : user.orgName}
+        </span>
+      </td>
+      <td className='username'>
+        <span>
+          {user.userName.length>12?user.userName.slice(0, 12)+'...': user.userName}
+        </span>
+      </td>
+      <td className='email'>
+        <span>
+          {user.email.length > 24 ? user.email.slice(0, 24) + '...' : user.email}
+        </span>
+      </td>
+      <td className='phone'>
+        <span>
+          {user.phoneNumber.length>17?user.phoneNumber.slice(0, 17)+'...':user.phoneNumber}
+        </span>
+      </td>
+      <td className='created'>
+        <span>
+          {createdAt}
+        </span>
+      </td>
+      <td className='status'>
+        <span>
+          {user.education.employmentStatus}
+        </span>
+      </td>
+      <td className='action'>
+        <span className="dottedMenu">
+          <img src={dottedMenu} />
+        </span>
       </td>
     </tr>
   )

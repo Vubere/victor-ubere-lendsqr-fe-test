@@ -27,7 +27,7 @@ const Card = ({ title, amount, icon }: usersCountProps) => {
   const formattedAmount = formatAmount(amount)
 
   return (
-    <div className='usersCount'>
+    <div className='card'>
       <div className='icon'>
         <img src={icon} />
       </div>
