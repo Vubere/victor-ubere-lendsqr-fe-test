@@ -44,6 +44,7 @@ const Pagination = ({ usersLength, pagination, setPagination }: paginationProps)
       <div className='left'>
         <p>Showing
           {usersLength > usersPerPage ? <span> <select name="pagination" id="pagination" value={usersPerPage} onChange={(e) => setPagination({ ...pagination, usersPerPage: parseInt(e.target.value) })}>
+            <option value="5">5</option>
             <option value="10">10</option>
             <option value="15">15</option>
             <option value="15">20</option>

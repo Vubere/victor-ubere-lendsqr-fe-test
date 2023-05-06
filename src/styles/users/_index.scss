@@ -2,9 +2,11 @@
 
 .users {
   background-color: v.$milk;
-  width: full;
-  height: full;
+  width: 100%;
+  height: 100%;
   padding: 60px 5.86%;
+  height: 100%;
+  overflow-y: auto;
   h2 {
     font-size: clamp(22px, 2.5vw, 24px);
     font-weight: 500;
@@ -13,6 +15,9 @@
     margin-bottom: 40px;
     line-height: 28.15px;
   }
+  .sub {
+    color: v.$thickColor;
+  }
   .usersCountContainer {
     width: 100%;
     display: flex;
@@ -20,7 +25,7 @@
     justify-content: space-between;
     gap: 15px;
     margin-bottom: 40px;
-    
+
     .card {
       width: 23.14%;
       height: 160px;
@@ -58,23 +63,26 @@
     }
     @media screen and (max-width: 510px) {
       justify-content: center;
-      .card{
+      .card {
         width: 90%;
       }
     }
   }
   .usersTable {
     width: 100%;
+    position: relative;
     .table {
       width: 100%;
       overflow-x: auto;
       background-color: v.$white;
-      padding: 30px 0;
+      padding: 10px 30px;
       display: flex;
-      justify-content: center;
+      border-radius: 4px;
       table {
         width: 94.21%;
-        display: block;
+        min-width: 950px;
+        margin-left: 60px;
+        margin: 0 auto;
         column-gap: 35px;
         border-collapse: collapse;
         border-radius: 4px;
@@ -98,7 +106,7 @@
                 font-weight: 600;
                 color: v.$thinColor;
                 text-align: start;
-                &.org {
+                &.organization {
                   min-width: 150px;
                 }
                 &.username {
@@ -119,6 +127,109 @@
                 img {
                   height: 16px;
                   width: 16px;
+                }
+              }
+              .filterContainer {
+                height: 600px;
+                position: absolute;
+                top: 60px;
+                z-index: 200032;
+                display: block;
+                width: 270px;
+                border-radius: 4px;
+                background-color: v.$white;
+                box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+                border: 1px solid rgba(84, 95, 125, 0.14);
+                form {
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  padding: 30px 20px;
+                  div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+                    margin-bottom: 20px;
+                    position: relative;
+                    label {
+                      color: v.$thinColor;
+                      font-size: 14px;
+                      font-family: "Work Sans", sans-serif;
+                      width: 100%;
+                      display: block;
+                      text-align: start;
+                      font-weight: 500;
+                      line-height: 16px;
+                    }
+                    input,
+                    select {
+                      height: 40px;
+                      width: 230px;
+                      color: #{v.$thinColor}a9;
+                      padding: 0 20px;
+                      background-color: #ffffff33;
+                      border-radius: 8px;
+                      border: 1px solid #{v.$thickColor}33;
+                      &::placeholder {
+                        color: #{v.$thinColor}a9;
+                      }
+                      &:focus {
+                        outline: none;
+                        border: 1px solid #{v.$thickColor}33;
+                      }
+                    }
+                    select {
+                      -webkit-appearance: none;
+                      -moz-appearance: none;
+                      appearance: none;
+                    }
+                    span {
+                      position: absolute;
+                    }
+                    span::after {
+                      content: "";
+                      position: absolute;
+                      top: 90%;
+                      margin: 0;
+                      right: 20px;
+                      transform: translateY(-50%);
+                      transform: rotate(135deg);
+                      width: 7px;
+                      height: 7px;
+                      border-right: 2px solid #{v.$thinColor}a9;
+                      border-top: 2px solid #{v.$thinColor}a9;
+                    }
+                  }
+                  div.buttons {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    position: static;
+                    button {
+                      width: 98px;
+                      height: 40px;
+                      border-radius: 8px;
+                      &:first-child {
+                        background-color: v.$white;
+                        border: 1px solid v.$thinColor;
+                        color: v.$thinColor;
+                        &:hover {
+                          background-color: v.$thinColor;
+                          color: v.$white;
+                        }
+                      }
+                      &:last-child {
+                        background-color: v.$thinnerColor;
+                        border: 1px solid v.$thinnerColor;
+                        color: v.$white;
+                        &:hover {
+                          background-color: v.$white;
+                          color: v.$thinnerColor;
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -143,6 +254,34 @@
               }
               &.action {
                 min-width: 30px;
+                position: relative;
+                .userOptionsPopup {
+                  position: absolute;
+                  width: 180px;
+                  height: 130px;
+                  padding: 20px 21.31px;
+                  right: 0;
+                  bottom: -135px;
+                  background-color: v.$white;
+                  border: 1px solid rgba(84, 95, 125, 0.04);
+                  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+                  border-radius: 4px;
+                  z-index: 20;
+                  ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    li, li a{
+                      display: flex;
+                      align-items: center;
+                      gap: 8.46px;
+                      font-size: 14px;
+                      font-weight: 500;
+                      line-height: 16.42px;
+                      color: v.$thinColor;
+                    }
+                  }
+                }
                 .dottedMenu {
                   width: 100%;
                   display: flex;
@@ -173,7 +312,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
-    
+
     @media screen and (max-width: 600px) {
       flex-direction: column;
       align-items: center;
@@ -205,16 +344,16 @@
         }
       }
     }
-    .right{
+    .right {
       width: 262px;
       @media screen and (max-width: 790px) {
         width: 240px;
       }
-      .buttons{
+      .buttons {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        .button{
+        .button {
           width: 24px;
           height: 24px;
           background-color: transparent;
@@ -224,10 +363,13 @@
           outline: none;
           cursor: pointer;
           border-radius: 4px;
-          &:last-child, &:first-child{
+          &:last-child,
+          &:first-child {
             background-color: #{v.$thickColor}13;
           }
-          &.active, &:last-child, &:first-child{
+          &.active,
+          &:last-child,
+          &:first-child {
             color: v.$thickColor;
             font-weight: 600;
           }

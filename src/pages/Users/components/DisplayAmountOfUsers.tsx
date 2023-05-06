@@ -62,7 +62,7 @@ const usersAmounDummyData = [
   },
   {
     title: 'users with savings',
-    amount: 12453,
+    amount: 102453,
     icon: usersSavingsIcon
   },
 ]

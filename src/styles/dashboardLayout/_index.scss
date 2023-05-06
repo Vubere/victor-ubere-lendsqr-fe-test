@@ -264,7 +264,7 @@
     top: 98px;
     left: clamp(260px,19.65%, 280px);
     width: calc( 100% - clamp(260px,19.65%, 280px));
-    height: calc(100vh - 98px);
+    height: calc( 100vh - 98px );
     overflow-y: auto;
   }
   @media screen and (max-width: 1204px) {
@@ -538,6 +538,7 @@
     }
     main{ 
       top: 80px;
+      min-height: calc(100vh - 78px);
     }
   }
   @media screen and (max-width: 390px) {

@@ -29,15 +29,13 @@ export default function Users() {
       })
   }, [])
 
-
-
   return (
     <div className="users">
       <h2>Users</h2>
       <DisplayAmountOfUsers />
       <div className="tableContainer">
-        {loading && <p>loading users...</p>}
-        {users.length > 0 ? <UsersTable users={users} /> : <p>No users to display</p>}
+        {loading && <p className="sub">loading users...</p>}
+        {loading?null:users.length > 0 ? <UsersTable users={users} /> : <p className="sub">No users to display</p>}
       </div>
     </div>
   )
