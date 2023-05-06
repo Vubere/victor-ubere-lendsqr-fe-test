@@ -15,6 +15,16 @@
   list-style-type: none;
   font-family: 'Avenir Next', sans-serif;
 }
+.notFound{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #000;
+}
 ::-webkit-scrollbar{
   display: none;
 }

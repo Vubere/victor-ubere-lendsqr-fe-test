@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, RefObject } from 'react'
 
 /* react router imports */
-import { Outlet, NavLink, useNavigate } from 'react-router-dom'
+import { Outlet, NavLink, useNavigate, useLocation } from 'react-router-dom'
 
 /* assets */
 import logo from '../../assets/logo_and_text.svg'
@@ -32,7 +32,7 @@ export default function DashboardLayout() {
   const user = localStorage.getItem('lend_sqr_user')
   const navigate = useNavigate()
   useEffect(() => {
-    if (!user){
+    if (!user) {
       navigate(routes.login)
     }
   }, [user, navigate])
@@ -53,11 +53,11 @@ export default function DashboardLayout() {
   return (
     <div className='dashboardLayout'>
       {
-        mobile ? <MobileHeader toggleSidebar={toggleOpen}/> :
+        mobile ? <MobileHeader toggleSidebar={toggleOpen} /> :
           <Header />
       }
       {
-        !mobile||open ?
+        !mobile || open ?
           <SideBar divRef={asideRef} /> : null
       }
       <main>
@@ -95,7 +95,7 @@ const Header = () => {
     </header>
   )
 }
-const MobileHeader = ({toggleSidebar}:{toggleSidebar:()=>void}) => {
+const MobileHeader = ({ toggleSidebar }: { toggleSidebar: () => void }) => {
   const [search, setSearch] = useState('')
   const labelRef = useRef<HTMLLabelElement>(null)
   const { open, toggleOpen } = useCloseOnOutsideClick(labelRef)
@@ -142,6 +142,7 @@ const MobileHeader = ({toggleSidebar}:{toggleSidebar:()=>void}) => {
 
 const SideBar = ({ divRef }: { divRef: RefObject<HTMLDivElement> }) => {
   const navigate = useNavigate()
+  const {pathname} = useLocation()
 
   const logout = () => {
     localStorage.removeItem('lend_sqr_user')
@@ -154,16 +155,16 @@ const SideBar = ({ divRef }: { divRef: RefObject<HTMLDivElement> }) => {
         <nav>
           <ul className='switchOrganizations'>
             <li>
-              <NavLink to={switchOrganizations.route} className={({ isActive, isPending }) => isPending ? 'pending' : isActive ? 'active' : ''}>
+              <div className="so">
                 <img src={switchOrganizations.icon} />
                 <span>{switchOrganizations.text} </span>
-              </NavLink>
+              </div>
               <img src={arrowDown} />
             </li>
           </ul>
           <ul className='dashboard section'>
             <li className='listItem'>
-              <NavLink to={Dashboard.route} className={({ isActive, isPending }) => isPending ? 'pending' : isActive ? 'active' : ''}>
+              <NavLink to={Dashboard.route} className={({ isActive, isPending }) => isPending ? 'pending' : isActive&&pathname==Dashboard.route ? 'active' : ''}>
                 <img src={Dashboard.icon} />
                 <span>{Dashboard.text}</span>
               </NavLink>
