@@ -33,7 +33,7 @@ export type user = {
     phoneNumber: string,
     address: string
   },
-  social: {
+  socials: {
     facebook: string,
     instagram: string,
     twitter: string,
