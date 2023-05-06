@@ -4,7 +4,7 @@ import routes from '../../../contants/routes'
 
 /* images */
 import view from '../assets/view.svg'
-import blacklist from '../assets/blacklist.svg'
+import blacklist from '../assets/blackList.svg'
 import acitvate from '../assets/activate.svg'
 import { Link } from 'react-router-dom'
 
