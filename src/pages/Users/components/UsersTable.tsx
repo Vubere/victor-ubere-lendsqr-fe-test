@@ -2,7 +2,7 @@ import { useState, useRef, } from 'react'
 
 
 /* types */
-import { user } from "../../../types"
+import { User } from "../../../types"
 
 /* components */
 import UserOptions from './UserOptions'
@@ -17,7 +17,7 @@ import { useCloseOnOutsideClick } from '../../../hooks'
 import Filter from './Filter'
 
 
-const UsersTable = ({ users }: { users: user[] }) => {
+const UsersTable = ({ users }: { users: User[] }) => {
 
   /* pagination */
   const [pagination, setPagination] = useState({
@@ -57,7 +57,7 @@ const UsersTable = ({ users }: { users: user[] }) => {
     </div >
   )
 }
-const TableRow = ({ user }: { user: user }) => {
+const TableRow = ({ user }: { user: User }) => {
 
   const ref = useRef<HTMLDivElement>(null)
   const { open, toggleOpen } = useCloseOnOutsideClick(ref)
