@@ -85,6 +85,7 @@
             flex-direction: column;
             height: 100%;
             justify-content: center;
+            padding-right: 30px;
             h3 {
               font-size: clamp(20px, 4.5vw, 22px);
               color: v.$thickColor;
@@ -308,6 +309,11 @@
     .userDetailsContainer {
       .header {
         .userInfo {
+          .user{
+            .name{
+              padding-right: 10px;
+            }
+          }
           .sec {
             flex-direction: column;
             & > div {
