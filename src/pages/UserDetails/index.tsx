@@ -71,34 +71,41 @@ export default function UserDetails() {
 
         <section className="header">
           <div className="userInfo">
-            <img src={avatar} alt="user avatar" className="avatar" />
-            <div className="name">
-              <h3>{user.profile.firstName} {user.profile.lastName}</h3>
-              <p>LSQFfS87g90</p>
-            </div>
-            <div className="tier">
-              <h3>User's Tier</h3>
-              <div className="stars">
-                <img src={filledStar} />
-                <img src={emptyStar} />
-                <img src={emptyStar} />
+            <div className="user">
+              <img src={avatar} alt="user avatar" className="avatar" />
+              <div className="name">
+                <h3>{user.profile.firstName} {user.profile.lastName}</h3>
+                <p>LSQFfS87g90</p>
               </div>
             </div>
-            <div className="acc">
-              <h3>{userCurrency}{user.accountBalance}</h3>
-              <p>
-                {user.accountNumber}/Providus Bank
-              </p>
+            <div className="sec">
+              <div className="tier">
+                <h3>User's Tier</h3>
+                <div className="stars">
+                  <img src={filledStar} />
+                  <img src={emptyStar} />
+                  <img src={emptyStar} />
+                </div>
+              </div>
+              <div className="acc">
+                <h3>{userCurrency}{user.accountBalance}</h3>
+                <p>
+                  {user.accountNumber}/Providus Bank
+                </p>
+              </div>
             </div>
           </div>
-          <ul>
-            <li className={view == 'general' ? 'active' : ''} onClick={() => changeView('general')}>General Details</li>
-            <li className={view == 'documents' ? 'active' : ''}>Documents</li>
-            <li className={view == 'bank' ? 'active' : ''}>Bank Details</li>
-            <li className={view == 'loans' ? 'active' : ''}>Loans</li>
-            <li className={view == 'savings' ? 'active' : ''}>Savings</li>
-            <li className={view == 'app' ? 'active' : ''}>App and System</li>
-          </ul>
+          <nav className="list">
+
+            <ul>
+              <li className={view == 'general' ? 'active' : ''} onClick={() => changeView('general')}>General Details</li>
+              <li className={view == 'documents' ? 'active' : ''}>Documents</li>
+              <li className={view == 'bank' ? 'active' : ''}>Bank Details</li>
+              <li className={view == 'loans' ? 'active' : ''}>Loans</li>
+              <li className={view == 'savings' ? 'active' : ''}>Savings</li>
+              <li className={view == 'app' ? 'active' : ''}>App and System</li>
+            </ul>
+          </nav>
         </section>
       </div> : null
       }
