@@ -2,6 +2,7 @@
 @use './dashboardLayout';
 @use './users';
 @use './userDetails';
+@use './_variables' as v;
 
 #root{
   width: 100vw;
@@ -22,8 +23,37 @@
   height: 100vh;
   font-size: 2rem;
   font-weight: 600;
-  color: #fff;
-  background-color: #000;
+  color: v.$thickColor;
+  background-color: v.$milk;
+}
+.errorBoundary{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h4{
+    font-size: 2rem;
+    font-weight: 600;
+    color: v.$thickColor;
+    background-color: v.$milk;
+  }
+  button{
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: v.$thickColor;
+    color: v.$milk;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  span{
+    margin-left: 1rem;
+    color: v.$thinColor;
+  }
 }
 ::-webkit-scrollbar{
   display: none;
