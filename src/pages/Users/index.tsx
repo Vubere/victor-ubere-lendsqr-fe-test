@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 
 /* types */
-import { user } from "../../types"
+import { User } from "../../types"
 
 
 /* components */
@@ -10,7 +10,7 @@ import DisplayAmountOfUsers from "./components/DisplayAmountOfUsers"
 import UsersTable from "./components/UsersTable"
 
 export default function Users() {
-  const [users, setUsers] = useState<user[]>([])
+  const [users, setUsers] = useState<User[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 

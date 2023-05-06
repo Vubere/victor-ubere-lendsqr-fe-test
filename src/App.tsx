@@ -1,5 +1,5 @@
 /* react default imports */
-import { lazy } from "react"
+import { lazy, Suspense } from "react"
 
 /* react router dom imports */
 import { BrowserRouter, Routes, Route } from "react-router-dom"
@@ -19,20 +19,23 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <TakeToTop>
-          <Routes>
-            <Route path={routes.home} element={<Home />} />
-            <Route path={routes.login} element={<Login />} />
-            <Route path={routes.dashboard} element={<DashboardLayout />} >
-              <Route path={routes.users} element={<Users />} />
-              <Route path={routes.userDetails} element={<UserDetails />} />
+      <Suspense fallback={<p className="page loading">Loading...</p>}>
+
+        <BrowserRouter>
+          <TakeToTop>
+            <Routes>
+              <Route path={routes.home} element={<Home />} />
+              <Route path={routes.login} element={<Login />} />
+              <Route path={routes.dashboard} element={<DashboardLayout />} >
+                <Route path={routes.users} element={<Users />} />
+                <Route path={routes.userDetails} element={<UserDetails />} />
+                <Route path="*" element={<div className="notFound">404, not found</div>} />
+              </Route>
               <Route path="*" element={<div className="notFound">404, not found</div>} />
-            </Route>
-            <Route path="*" element={<div className="notFound">404, not found</div>} />
-          </Routes>
-        </TakeToTop>
-      </BrowserRouter >
+            </Routes>
+          </TakeToTop>
+        </BrowserRouter >
+      </Suspense>
     </>
   )
 }

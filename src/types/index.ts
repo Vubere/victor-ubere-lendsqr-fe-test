@@ -1,4 +1,4 @@
-export type user = {
+export type User = {
   accountBalance: string,
   accountNumber: string,
   createdAt: string,
