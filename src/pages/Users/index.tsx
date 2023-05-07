@@ -30,7 +30,9 @@ export default function Users() {
         setError('Something went wrong')
         setLoading(false)
       })
+      
   }, [])
+
 
   return (
     <div className="users">

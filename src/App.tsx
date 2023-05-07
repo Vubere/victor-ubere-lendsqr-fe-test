@@ -10,6 +10,8 @@ import TakeToTop from "./components/TakeToTop"
 
 /* pages  and layouts imports */
 import ErrorBoundary from "./components/Errorboundary"
+import NotFound from "./pages/NotFound"
+
 const DashboardLayout = lazy(() => import('./layouts/DashboardLayout'))
 const Login = lazy(() => import('./pages/Login'))
 const Users = lazy(() => import('./pages/Users'))
@@ -27,12 +29,12 @@ function App() {
               <Route path={routes.home} element={<Home />} />
               <Route path={routes.login} element={<Login />} />
               <Route path={routes.dashboard} element={<DashboardLayout />} >
-                <Route index element={<div className="notFound">404, not found</div>} />
+                <Route index element={<NotFound/>} />
                 <Route path={routes.users} element={<Users />} />
                 <Route path={routes.userDetails} element={<UserDetails />} />
-                <Route path="*" element={<div className="notFound">404, not found</div>} />
+                <Route path="*" element={<NotFound/>} />
               </Route>
-              <Route path="*" element={<div className="notFound">404, not found</div>} />
+              <Route path="*" element={<NotFound/>} />
             </Routes>
           </TakeToTop>
         </BrowserRouter >

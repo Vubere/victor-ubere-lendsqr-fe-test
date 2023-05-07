@@ -29,6 +29,7 @@ export default function UserDetails() {
   const [view, setView] = useState<'general' | 'documents' | 'bank' | 'loans' | 'savings' | 'app'>('general')
 
   useEffect(() => {
+    document.title = 'User Details'
     if (id) {
       const users = localStorage.getItem('users')
       if (users != null) {
@@ -196,7 +197,7 @@ const GeneralView = ({ user }: { user: User }) => {
           </div>
           <div>
             <h4>LOAN PAYMENT</h4>
-            <p>{user.education.loanRepayment}</p>
+            <p>{userCurrency}{user.education.loanRepayment}</p>
           </div>
         </div>
       </section>

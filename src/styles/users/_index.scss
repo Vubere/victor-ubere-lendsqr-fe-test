@@ -61,10 +61,10 @@
         }
       }
     }
-    @media screen and (max-width: 510px) {
+    @media screen and (max-width: 515px) {
       justify-content: center;
       .card {
-        width: 90%;
+        width: 100%;
       }
     }
   }
@@ -254,14 +254,12 @@
               }
               &.action {
                 min-width: 30px;
-                position: relative;
                 .userOptionsPopup {
                   position: absolute;
                   width: 180px;
                   height: 130px;
                   padding: 20px 21.31px;
-                  right: 0;
-                  bottom: -135px;
+                  right: -10px;
                   background-color: v.$white;
                   border: 1px solid rgba(84, 95, 125, 0.04);
                   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
