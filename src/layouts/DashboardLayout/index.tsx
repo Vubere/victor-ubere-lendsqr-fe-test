@@ -51,7 +51,7 @@ export default function DashboardLayout() {
 
 
   return (
-    <div className='dashboardLayout'>
+    <div className='dashboardLayout' data-testid='dashboardLayout'>
       {
         mobile ? <MobileHeader toggleSidebar={toggleOpen} /> :
           <Header />

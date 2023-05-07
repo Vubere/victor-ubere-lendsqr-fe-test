@@ -8,6 +8,6 @@ export default function NotFound() {
     document.title = 'Not Found'
   }, [])
   return (
-    <div className="notFound">404, not found</div>
+    <div className="notFound" data-testid='notFound'>404, not found</div>
   )
 }
