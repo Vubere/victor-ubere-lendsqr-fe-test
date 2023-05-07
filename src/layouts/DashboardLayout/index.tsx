@@ -143,7 +143,7 @@ const MobileHeader = ({ toggleSidebar }: { toggleSidebar: () => void }) => {
 const SideBar = ({ divRef }: { divRef: RefObject<HTMLDivElement> }) => {
   const navigate = useNavigate()
   const {pathname} = useLocation()
-
+  
   const logout = () => {
     localStorage.removeItem('lend_sqr_user')
     navigate(routes.login)

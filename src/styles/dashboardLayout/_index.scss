@@ -308,6 +308,7 @@
     }
     aside {
       min-width: 230px;
+      z-index: 2000;
       nav {
         li {
           a {
@@ -335,7 +336,7 @@
   }
   @media screen and (max-width: 767px) {
     header.mobile {
-      padding: 10px;
+      padding: 20px;
       display: flex;
       align-items: center;
       .hamburger {
@@ -468,6 +469,7 @@
   @media screen and (max-width: 520px) {
     header.mobile {
       height: 80px;
+      padding: 15px;
       .hamburger {
         width: 30px;
         min-width: 30px;
@@ -544,7 +546,7 @@
   }
   @media screen and (max-width: 390px) {
     header.mobile {
-      padding: 5px;
+      padding: 10px;
       .hamburger {
         height: 25px;
         gap: 3px;
@@ -567,6 +569,9 @@
   }
   @media screen and (max-width: 360px) {
     header.mobile {
+      @media screen and (max-width: 305px) {
+        padding: 5px;
+      }
       h1 {
         width: 80px;
         img {

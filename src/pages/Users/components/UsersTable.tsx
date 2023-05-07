@@ -37,7 +37,7 @@ const UsersTable = ({ users }: { users: User[] }) => {
           <thead>
             <tr>
               {['organization', 'username', 'email', 'phone number', 'date joined', 'status'].map((title) => (
-                <Th title={title} />
+                <Th key={title} title={title} />
               ))}
               <th></th>
             </tr>
