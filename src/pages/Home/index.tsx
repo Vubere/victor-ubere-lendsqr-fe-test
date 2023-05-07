@@ -15,7 +15,7 @@ export default function Home() {
   const navigate = useNavigate()
   useEffect(() => {
     if (user) {
-      navigate(routes.dashboard)
+      navigate(routes.usersLink)
     } else {
       navigate(routes.login)
     }
