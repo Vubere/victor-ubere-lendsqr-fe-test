@@ -104,8 +104,8 @@ const TableRow = ({ user }: { user: User }) => {
         </span>
       </td>
       <td className='action'>
-        <span className="dottedMenu" onClick={() => toggleOpen()}>
-          <img src={dottedMenu} />
+        <span className="dottedMenu except" onClick={() => toggleOpen()}>
+          <img src={dottedMenu}  className='except'/>
         </span>
         {open && <UserOptions id={user.id} optionsRef={ref} />}
       </td>

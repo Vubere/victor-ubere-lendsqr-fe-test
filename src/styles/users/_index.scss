@@ -71,6 +71,7 @@
   .usersTable {
     width: 100%;
     position: relative;
+    overflow-y: visible;
     .table {
       width: 100%;
       overflow-x: auto;
@@ -133,6 +134,7 @@
                 height: 600px;
                 position: absolute;
                 top: 60px;
+                left: 15px;
                 z-index: 200032;
                 display: block;
                 width: 270px;
@@ -269,7 +271,8 @@
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
-                    li, li a{
+                    li,
+                    li a {
                       display: flex;
                       align-items: center;
                       gap: 8.46px;
